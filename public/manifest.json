@@ -1,0 +1,18 @@
+{
+  "name": "AI Words - 学 AI 英语词汇",
+  "short_name": "AI Words",
+  "description": "专注 AI 场景英语词汇的学习应用：提示词、大模型、AI 编程、Agent、API 文档与报错信息。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

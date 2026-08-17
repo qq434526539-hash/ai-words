@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 224 45% 5%;
+    --foreground: 190 35% 94%;
+    --card: 220 38% 9%;
+    --card-foreground: 190 35% 94%;
+    --primary: 184 93% 54%;
+    --primary-foreground: 222 52% 6%;
+    --secondary: 219 31% 14%;
+    --secondary-foreground: 190 35% 94%;
+    --muted: 219 31% 12%;
+    --muted-foreground: 210 16% 64%;
+    --accent: 184 72% 13%;
+    --accent-foreground: 184 93% 68%;
+    --destructive: 353 91% 61%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 199 36% 21%;
+    --input: 199 30% 18%;
+    --ring: 184 93% 54%;
+    --success: 155 86% 47%;
+    --success-foreground: 220 45% 5%;
+    --radius: 0.75rem;
+  }
+
+  * { @apply border-border; }
+  html { background: hsl(var(--background)); }
+  body {
+    @apply m-0 bg-background text-foreground antialiased;
+    min-width: 320px;
+    background-image:
+      linear-gradient(rgba(35, 229, 238, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(35, 229, 238, 0.025) 1px, transparent 1px),
+      radial-gradient(circle at 75% -10%, rgba(79, 70, 229, 0.16), transparent 34rem),
+      radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.09), transparent 28rem);
+    background-size: 36px 36px, 36px 36px, auto, auto;
+    background-attachment: fixed;
+  }
+  ::selection { background: rgba(34, 211, 238, 0.28); color: white; }
+  button, a { @apply transition-colors; }
+  button:focus-visible, a:focus-visible, input:focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
+}
+
+@layer components {
+  .tech-panel {
+    @apply relative overflow-hidden border bg-card/80 shadow-[0_18px_50px_rgba(0,0,0,0.24)] backdrop-blur-xl;
+    background-image: linear-gradient(135deg, rgba(34, 211, 238, 0.045), transparent 40%);
+  }
+  .tech-panel::before,
+  .tech-panel::after {
+    content: "";
+    @apply pointer-events-none absolute h-3 w-3;
+  }
+  .tech-panel::before { @apply left-0 top-0 border-l-2 border-t-2 border-primary; }
+  .tech-panel::after { @apply bottom-0 right-0 border-b-2 border-r-2 border-primary/60; }
+  .hud-label { @apply font-mono text-[10px] uppercase tracking-[0.22em] text-primary/75; }
+  .data-value { @apply font-mono tracking-tight; }
+  .glass-chip { @apply inline-flex items-center rounded-md border border-primary/20 bg-primary/5 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-primary; }
+  .scanline-overlay {
+    background: repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(255,255,255,0.012) 4px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .signal-pulse { animation: signal-pulse 2.4s ease-in-out infinite; }
+  @keyframes signal-pulse { 0%, 100% { opacity: .45; box-shadow: 0 0 0 0 rgba(34,211,238,.15); } 50% { opacity: 1; box-shadow: 0 0 0 5px rgba(34,211,238,0); } }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "ai-words",
+  "version": "0.2.0",
+  "private": true,
+  "description": "AI Words - 个人使用的 AI 英语词汇学习应用",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "android:sync": "npm run build && cap sync android",
+    "android:apk": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "idb": "^8.0.3",
+    "lucide-react": "^0.441.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.8.0",
+    "tailwind-merge": "^2.5.2",
+    "zustand": "^5.0.7"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.5.4",
+    "vite": "^6.1.0",
+    "vite-plugin-pwa": "^1.0.3"
+  }
+}

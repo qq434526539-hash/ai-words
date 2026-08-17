@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AI Words</string>
+    <string name="title_activity_main">AI Words</string>
+    <string name="package_name">com.local.aiwords</string>
+    <string name="custom_url_scheme">com.local.aiwords</string>
+</resources>
